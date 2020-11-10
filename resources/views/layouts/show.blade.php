@@ -29,9 +29,9 @@
                     <p class='product__text'>
                         <p> {{  'R$ '.number_format($produto->valor, 2, ',', '.') }}   </p>
                         <p> {{  strtoupper($produto->situacao) }}   </p>
-                        {{-- <a class='button js-add-product' href='{{ route('produtos.show', $produto['id']) }}' title='Add to cart'>
+                        <a class='button js-add-product' href='{{ route('produtos.show', $produto['id']) }}' title='Add to cart'>
                             Ver Produto
-                        </a> --}}
+                        </a>
                         <form action="{{ route('produtos.destroy', $produto->id) }}" method="POST">
                             <a class="text-secondary btn btn-primary btn-detail" data-toggle="modal" id="mediumButton" title="Editar" data-target="#mediumModal"
                                 data-attr="{{ route('produtos.edit', $produto->id) }}">
