@@ -42,7 +42,7 @@
             left: 0;
             bottom: 0;
             width: 100%;
-            background-color: transparent;
+            background-color: white;
             color: black;
             text-align: center;
         }
@@ -58,7 +58,7 @@
 <body>
 
     <nav class="fixed-top navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#"><img width="200" src="{{ asset('img/logo2.png') }}" /></a>
+        <a class="navbar-brand" href="{{ url('/') }}"><img width="200" src="{{ asset('img/logo2.png') }}" /></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Alterna navegação">
           <span class="navbar-toggler-icon"></span>
         </button>

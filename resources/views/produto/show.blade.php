@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <div class="row" style="padding-top: 30px">
+    <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
                 <h2>Produtos </h2>
@@ -20,8 +20,30 @@
             <p>{{ $message }}</p>
         </div>
     @endif
+    <div class="d-flex justify-content-center">
+        <div class="card" style="width: 25rem;">
+            <img class="card-img-top" src="{{ isset($produto->foto)? store($produto->foto) : asset('img/semfoto.jfif') }}" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">{{$produto->nome}}</h5>
+              <p class="card-text">{{  $produto->descricao }} </p>
+              <h4 class="card-text">{{  'R$ '.number_format($produto->valor, 2, ',', '.') }} </h4>
+              <p class="card-text">{{  strtoupper($produto->situacao) }} </p>
+              {{-- <a href="{{ route('produtos.show', $produto['id']) }}" class="btn btn-primary">Ver Produto</a> --}}
+              <form action="{{ route('produtos.destroy', $produto->id) }}" method="POST">
+                <a class="text-secondary btn btn-primary btn-detail" data-toggle="modal" id="mediumButton" title="Editar" data-target="#mediumModal"
+                    data-attr="{{ route('produtos.edit', $produto->id) }}">
+                    ✏️
+                </a>
+                @csrf
+                @method('DELETE')
 
-    <div class="shop__products">
+                <button type="submit" title="Deletar" class="btn btn-danger btn-detail open_modal"  >
+                    🗑️</button>
+            </form>
+            </div>
+          </div>
+        </div>
+    {{-- <div class="shop__products">
         <div class="products">
                 <div class='products__item'>
                     <article class='product'>
@@ -32,22 +54,12 @@
                         {{-- <a class='button js-add-product' href='{{ route('produtos.show', $produto['id']) }}' title='Add to cart'>
                             Ver Produto
                         </a> --}}
-                        <form action="{{ route('produtos.destroy', $produto->id) }}" method="POST">
-                            <a class="text-secondary btn btn-primary btn-detail" data-toggle="modal" id="mediumButton" title="Editar" data-target="#mediumModal"
-                                data-attr="{{ route('produtos.edit', $produto->id) }}">
-                                ✏️
-                            </a>
-                            @csrf
-                            @method('DELETE')
 
-                            <button type="submit" title="Deletar" class="btn btn-danger btn-detail open_modal"  >
-                                🗑️</button>
-                        </form>
                          </p>
                     </article>
                 </div>
       </div>
-    </div>
+    </div> --}}
 
 
 

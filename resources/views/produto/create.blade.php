@@ -17,7 +17,7 @@
         </ul>
     </div>
 @endif
-<form action="{{ route('produtos.store') }}" method="POST">
+<form action="{{ route('produtos.store') }}" enctype="multipart/form-data" method="POST">
     @csrf
     @method('POST')
     <div class="row">

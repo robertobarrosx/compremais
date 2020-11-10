@@ -4,9 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Produto;
-
 class ProdutoC extends Controller
 {
+
+    public function dashboard($response){
+        dd(Auth::get()->user());
+        return view('dashboard');
+    }
     public function search($request){
         $search = $request->input('search');
 
@@ -28,7 +32,7 @@ class ProdutoC extends Controller
         return view('produto.create');
     }
 
-    public function store(Request $request)
+    public function store($request)
     {
         $request->validate([
             'nome' => 'required',
@@ -36,6 +40,9 @@ class ProdutoC extends Controller
             'situacao' => 'required',
         ]);
 
+        // if($request->hasFile('foto') && $request->image->isValid()){
+
+        // }
         $produtoNome = $request->nome;
         $data = $request->all();
 
@@ -80,7 +87,7 @@ class ProdutoC extends Controller
 
         $produto->update($request->all());
 
-        return redirect()->route('produtos.index')
+        return redirect()->route('produtos.show',$id)
             ->with('success', $produtoNome . ' atualizado com sucesso.');
         }else{
             return view('notfound.index')->with('pagina', "produtos.index");

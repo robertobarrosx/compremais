@@ -3,14 +3,14 @@
         <div class="form-inline my-2 my-lg-0">
 
 
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+        {{-- <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Meus Produtos') }}
-        </h2>
-        <div style="padding-left: 200px">
+        </h2> --}}
+        {{-- <div style="padding-left: 200px">
             <a class="btn btn-success text-light" data-toggle="modal" id="mediumButton" data-target="#mediumModal"
                 data-attr="{{ route('produtos.create') }}" title="Adicionar Projeto"> + </i>
             </a>
-        </div>
+        </div> --}}
 
 </div>
     </x-slot>
@@ -42,7 +42,7 @@
         </div>
     </div>
 
-    <script>
+    {{-- <script>
         // display a modal (small modal)
         $(document).on('click', '#smallButton', function(event) {
             event.preventDefault();
@@ -93,5 +93,5 @@
                 },
                 timeout: 8000
             })
-        });
+        }); --}}
 </x-app-layout>
