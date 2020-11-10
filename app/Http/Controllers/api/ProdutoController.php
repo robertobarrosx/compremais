@@ -8,10 +8,7 @@ use App\Models\Produto;
 
 class ProdutoController extends Controller
 {
-    public function __construct(){
-        $this->middleware(['auth:sanctum', 'verified'],['only'=>'create']);
 
-    }
 
     public function index()
     {
