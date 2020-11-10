@@ -22,7 +22,7 @@
 
     <style>
         .footer {
-            /* position: fixed; */
+            position: fixed;
             left: 0;
             bottom: 0;
             width: 100%;
@@ -65,10 +65,10 @@
 
 
           </ul>
-          <form class="form-inline my-2 my-lg-0"  action="{{ route('produtos.search', $search) }}" method="GET" >
+          <form class="form-inline my-2 my-lg-0"  action="{{ url('search') }}" method="GET" >
             @csrf
             @method('POST')
-            <input class="form-control mr-sm-2" type="search"  placeholder="Pesquisar produto">
+            <input class="form-control mr-sm-2" type="text" name="search"  placeholder="Pesquisar produto">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>
           </form>
         </div>
@@ -107,7 +107,7 @@
         @yield('content')
     </div>
     <div class="text-center footer">
-        <h4>2020 - Roberto Barros</h4>
+        <h6>2020 - Roberto Barros</h6>
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>

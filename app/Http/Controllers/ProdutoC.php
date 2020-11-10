@@ -7,7 +7,8 @@ use App\Models\Produto;
 
 class ProdutoC extends Controller
 {
-    public function search($search){
+    public function search($request){
+        $search = $request->input('search');
 
         $produtos = Produto::where('nome', 'LIKE', '%'.$search.'%')
         ->orWhere('descricao', 'LIKE', '%'.$search.'%')

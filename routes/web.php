@@ -15,8 +15,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'App\Http\Controllers\ProdutoC@index');
 
-Route::resource('/produtos', 'App\Http\Controllers\ProdutoC');
-
+Route::resource('produtos', 'App\Http\Controllers\ProdutoC');
+Route::get('search', 'App\Http\Controllers\ProdutoC@search');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
